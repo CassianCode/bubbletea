@@ -1,0 +1,132 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Lilita One", sans-serif;
+}
+
+:root {
+	--color-primary: #ffc0ea;
+	--color-light: #ffe4f6;
+	--color-dark: #b5057a;
+}
+
+.wrapper {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-light);
+	position: relative;
+}
+
+.bg.splash {
+	position: absolute;
+	background-color: white;
+	transform: scale(2.3) rotate(0deg);
+	top: 49%;
+	animation: wiggleSmall 3s infinite;
+}
+
+@keyframes wiggleSmall {
+	0% {
+		transform: scale(2.3) rotate(0deg);
+	}
+	50% {
+		transform: scale(2.3) rotate(0deg);
+	}
+	50.1% {
+		transform: scale(2.3) rotate(10deg);
+	}
+	100% {
+		transform: scale(2.3) rotate(10deg);
+	}
+}
+
+.bg.splash:first-child {
+	transform: scale(4) rotate(30deg);
+	opacity: 0.5;
+	top: 40%;
+	animation-name: wiggleBig;
+}
+
+@keyframes wiggleBig {
+	0% {
+		transform: scale(4) rotate(30deg);
+	}
+	50% {
+		transform: scale(4) rotate(30deg);
+	}
+	50.1% {
+		transform: scale(4) rotate(20deg);
+	}
+	100% {
+		transform: scale(4) rotate(20deg);
+	}
+}
+
+.wrapper,
+.mainAnimation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.mainAnimation {
+	position: relative;
+}
+
+.mainAnimationChild {
+	position: absolute;
+}
+
+.bubbletea {
+	width: 40vw;
+	z-index: 1;
+	animation: popout 3s infinite;
+	transform: scale(1);
+}
+
+@keyframes popout {
+	0% {
+		transform: scale(1);
+	}
+	20% {
+		transform: scale(1.2);
+	}
+	40% {
+		transform: scale(1);
+	}
+}
+
+.splash {
+	width: 200px;
+	aspect-ratio: 1;
+	background-color: red;
+	clip-path: path(
+		"M 20 20, 60 60, 80 10, 100 60, 140 20, 140 70, 200 30, 180 100, 200 120, 170 150, 200 200, 140 170, 120 200, 80 180, 20 200, 50 150, 0 130, 30 100, 20 20"
+	);
+	top: 0;
+}
+
+h1 {
+	color: var(--color-primary);
+	z-index: 1;
+}
+
+h1.infoText {
+	color: var(--color-dark);
+	animation: popout 3s infinite;
+	animation-delay: 0.4s;
+}
+
+h1.mainAnimationChild {
+	font-size: 4rem;
+	bottom: 10%;
+	text-shadow: 5px 5px 0 var(--color-dark);
+	animation: popout 3s infinite;
+	animation-delay: 0.2s;
+}
